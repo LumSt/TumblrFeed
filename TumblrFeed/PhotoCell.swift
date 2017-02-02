@@ -10,6 +10,10 @@ import UIKit
 
 class PhotoCell: UITableViewCell {
 
+    @IBOutlet weak var photoCell: UIView!
+    
+    @IBOutlet weak var imgView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +24,5 @@ class PhotoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

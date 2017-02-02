@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +20,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = 240
 
         // Do any additional setup after loading the view.
         
@@ -44,6 +47,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                         
                         // This is where you will store the returned array of posts in your posts property
                         self.posts = responseFieldDictionary["posts"] as! [NSDictionary]
+                        
+                        self.tableView.reloadData()
                     }
                 }
         });
@@ -64,8 +69,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "This is row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+        
+        let post = posts?[indexPath.row]
+        
+        let photos = post?.value(forKeyPath: "photos") as? [NSDictionary]
+        
+        let imageUrlString = photos?[0].value(forKeyPath: "original_size.url") as? String
+        let imageUrl = URL(string: imageUrlString!)!
+        
+        cell.imgView.setImageWith(imageUrl)
         
         return cell
     }
