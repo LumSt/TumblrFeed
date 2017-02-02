@@ -1,2 +1,2 @@
 # TumblrFeed
-CodePath lab week 1. Lum Situ, Rodrigl
+CodePath lab week 1. Lum Situ, Rodrigo Bell
