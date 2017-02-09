@@ -65,13 +65,13 @@
 		135865061E42C431007DBB34 /* TumblrFeed */ = {
 			isa = PBXGroup;
 			children = (
+				135865191E42CE54007DBB34 /* PhotosViewController.swift */,
+				13F5703B1E4C1AD40052B9C1 /* PhotoDetailsViewController.swift */,
 				135865071E42C431007DBB34 /* AppDelegate.swift */,
 				1358650B1E42C431007DBB34 /* Main.storyboard */,
-				13F5703B1E4C1AD40052B9C1 /* PhotoDetailsViewController.swift */,
 				1358650E1E42C431007DBB34 /* Assets.xcassets */,
 				135865101E42C431007DBB34 /* LaunchScreen.storyboard */,
 				135865131E42C431007DBB34 /* Info.plist */,
-				135865191E42CE54007DBB34 /* PhotosViewController.swift */,
 				4FB8007E1E42DD86007FBF61 /* PhotoCell.swift */,
 			);
 			path = TumblrFeed;
